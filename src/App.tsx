@@ -5,12 +5,12 @@ import { Routes, Route } from "react-router"
 import DriverList from "./components/DriverList"
 import DriverStandingsTable from "./components/DriverStandingsTable"
 import RaceCalender from "./components/RaceCalender"
-import AppHeader from "./components/AppHeader"
+import Home from "./components/Home"
 function App() {
 
   return (
     <main>
-      <AppHeader />
+      <Home />
     </main>
     
   )

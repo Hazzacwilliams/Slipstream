@@ -64,6 +64,31 @@ export interface Races {
     Circuit: Circuit
     date: string
     time: string
+    FirstPractice: {
+        date: string
+        time: string
+    }
+    SecondPractice: {
+        date: string
+        time: string
+    }
+    ThirdPractice: {
+        date: string
+        time: string
+    }
+    SprintQualifying: {
+        date: string
+        time: string
+    }
+    Sprint: {
+        date: string
+        time: string
+    }
+    Qualifying: {
+        date: string
+        time: string
+    }
+    result: string
 }
 
 export interface Circuit {

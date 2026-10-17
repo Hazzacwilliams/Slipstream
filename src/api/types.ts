@@ -23,6 +23,16 @@ export interface MRDataRaces {
     }
 }
 
+export type Session = {
+    name: string
+    start: Date
+}
+
+export type SessionTime = {
+    date: string
+    time: string
+}
+
 export interface Driver {
     code: string
     dateOfBirth: string
@@ -64,30 +74,12 @@ export interface Races {
     Circuit: Circuit
     date: string
     time: string
-    FirstPractice: {
-        date: string
-        time: string
-    }
-    SecondPractice: {
-        date: string
-        time: string
-    }
-    ThirdPractice: {
-        date: string
-        time: string
-    }
-    SprintQualifying: {
-        date: string
-        time: string
-    }
-    Sprint: {
-        date: string
-        time: string
-    }
-    Qualifying: {
-        date: string
-        time: string
-    }
+    FirstPractice: SessionTime
+    SecondPractice?: SessionTime
+    ThirdPractice?: SessionTime
+    SprintQualifying?: SessionTime
+    Sprint?: SessionTime
+    Qualifying: SessionTime
     result: string
 }
 
@@ -101,4 +93,22 @@ export interface Circuit {
         locality: string
         country: string
     }
+}
+
+export interface WeatherForecast {
+    timezone: string
+    daily: {
+        time: string[]
+        weather_code: number[]
+        temperature_2m_min: number[]
+        temperature_2m_max: number[]
+        precipitation_probability_max: (number | null)[]
+    }
+}
+
+export type DayWeather = {
+    code: number
+    high: number
+    low: number
+    rainChance: (number | null)
 }

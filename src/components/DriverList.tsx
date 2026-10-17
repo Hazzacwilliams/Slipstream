@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { type MRDataDrivers } from '../api/types'
 import { useFetch } from "../hooks/useFetch";
 import DataCell from './styling/table/DataCell';

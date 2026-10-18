@@ -9,6 +9,7 @@ export interface MRDataDrivers {
 export interface MRDataStandings {
     MRData: {
         StandingsTable: {
+            round: string
             StandingsLists: StandingsList[]
         }
     }
@@ -47,7 +48,8 @@ export interface Driver {
 export interface StandingsList {
     season: string
     round: string
-    DriverStandings: DriverStanding[]
+    DriverStandings?: DriverStanding[]
+    ConstructorStandings?: ConstructorStanding[]
 }
 
 export interface DriverStanding {
@@ -57,6 +59,13 @@ export interface DriverStanding {
     wins: string
     Driver: Driver
     Constructors: Constructor []
+}
+
+export interface ConstructorStanding {
+    position: string
+    points: string
+    wins: string
+    Constructor: Constructor
 }
 
 export interface Constructor {

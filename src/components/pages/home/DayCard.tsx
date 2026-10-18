@@ -1,6 +1,6 @@
-import type { DayWeather, Session } from "../api/types"
-import { DropletIcon } from "./icons/Icons"
-import { weatherIconLookup } from "./utils/weather"
+import type { DayWeather, Session } from "../../../api/types"
+import { DropletIcon } from "../../icons/Icons"
+import { weatherIconLookup } from "../../utils/weather"
 
 type DayCardsProps = {
     sessions: Session[]
@@ -15,6 +15,9 @@ export default function DayCard({ sessions, weather, isRaceDay = false }: DayCar
     const time = new Intl.DateTimeFormat("en-GB", { timeStyle: "short" });
 
     const conditions = weather ? weatherIconLookup(weather.code) : undefined;
+
+    const chanceofRain = weather?.rainChance ? `${weather?.rainChance}% chance of rain` : "No chance of rain";
+
 
     return (
         <div className="flex flex-col gap-4 bg-neutral-900 border border-neutral-800 p-5">
@@ -43,7 +46,7 @@ export default function DayCard({ sessions, weather, isRaceDay = false }: DayCar
             {weather && conditions &&
                 <div className="flex flex-row gap-1.5 items-center">
                     <DropletIcon className="size-3.5 " />
-                    <span className="text-sm text-neutral-400">{weather.rainChance}% chance of rain • {conditions.label}</span>
+                    <span className="text-sm text-neutral-400">{chanceofRain} • {conditions.label}</span>
                 </div>
             }
 

@@ -4,10 +4,11 @@ import { toDate } from "../../utils/dateTime";
 import { useNow } from "../../../hooks/useNow";
 import NextRace from "./NextRace"
 import RaceWeekend from "./RaceWeekend"
+import Championships from "./Championships";
 
 export default function Home() { 
 
-    const { data, loading, error } = useFetch<MRDataRaces>('https://api.jolpi.ca/ergast/f1/2026/races/');
+    const { data, loading, error } = useFetch<MRDataRaces>('https://api.jolpi.ca/ergast/f1/current/races/');
     const now = useNow();
 
     const raceCalendar = data?.MRData.RaceTable.Races ?? [];
@@ -24,8 +25,9 @@ export default function Home() {
     return (
         <>
             <NextRace {...raceInfo} />
-            <main className="px-8 flex flex-col pt-12 pb-16">
+            <main className="px-8 flex flex-col pt-12 pb-16 gap-14">
                 <RaceWeekend {...raceInfo} />
+                <Championships {...raceInfo}/>
             </main>
 
         </>

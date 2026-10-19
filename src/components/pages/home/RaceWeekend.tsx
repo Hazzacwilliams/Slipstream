@@ -41,15 +41,15 @@ export default function RaceWeekend({ nextRace }: RaceWeekendProps) {
 
     return (
         <div>
-            <div className="flex flex-row justify-between items-end flex-wrap mb-5">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-1 sm:gap-0 flex-wrap mb-4 sm:mb-5">
                 <div>
-                    <p className="font-barlow text-3xl font-extrabold italic uppercase tracking-wide text-neutral-100">race weekend</p>
+                    <p className="font-barlow text-2xl sm:text-3xl font-extrabold italic uppercase tracking-wide text-neutral-100 ">race weekend</p>
                 </div>
                 <div>
-                    <p className="text-sm text-neutral-400">Session times in {properTZ} time • Forecast for {nextRace.Circuit.Location.locality}</p>
+                    <p className="text-sm text-neutral-400"><span className="hidden sm:inline">Session times in </span>{properTZ} time • Forecast for {nextRace.Circuit.Location.locality}</p>
                 </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 <DayCard sessions={card1} weather={weather1}/>
                 <DayCard sessions={card2} weather={weather2}/>
                 <DayCard sessions={card3} weather={weather3} isRaceDay/>

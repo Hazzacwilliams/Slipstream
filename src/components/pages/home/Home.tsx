@@ -25,7 +25,7 @@ export default function Home() {
     return (
         <>
             <NextRace {...raceInfo} />
-            <main className="px-8 flex flex-col pt-12 pb-16 gap-14">
+            <main className="px-4 sm:px-8 flex flex-col pt-8 sm:pt-12 pb-10 sm:pb-16 gap-10 sm:gap-14 max-w-7xl mx-auto">
                 <RaceWeekend {...raceInfo} />
                 <Championships {...raceInfo}/>
             </main>
